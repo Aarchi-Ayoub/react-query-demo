@@ -19,8 +19,8 @@ export const SuperHeroesPage = () => {
   return (
     <>
       <h2>Super Heroes Page</h2>
-      {data.map(hero => {
-        return <div>{hero.name}</div>
+      {data.map((hero, index) => {
+        return <div key={index}>{hero.name}</div>
       })}
     </>
   )
