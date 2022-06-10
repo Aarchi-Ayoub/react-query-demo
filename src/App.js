@@ -7,7 +7,7 @@ import Routes from "./routes";
 function App() {
   const clientQuery = new QueryClient();
   return (
-    <QueryClientProvider client={clientQuery}>\
+    <QueryClientProvider client={clientQuery}>
       <Routes />
     </QueryClientProvider>
   );
