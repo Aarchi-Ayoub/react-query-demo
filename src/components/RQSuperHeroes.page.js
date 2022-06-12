@@ -2,16 +2,13 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, isFetching, data, isError, error } = useQuery("get-heros", () => {
-    return axios.get("http://localhost:4000/superheroes1");
-  });
-  const result = useQuery("get-heros", () => {
-    return axios.get("http://localhost:4000/superheroes1");
-  });
-
-  console.log(result);
-  console.log({ error });
-
+  const getData = () => {
+    return axios.get("http://localhost:4000/superheroes");
+  };
+  const { isLoading, isFetching, data, isError, error } = useQuery(
+    "get-heros",
+    getData
+  );
 
   return (
     <div>
@@ -22,7 +19,15 @@ export const RQSuperHeroesPage = () => {
 
       {isError && <h2>Error was found : {error?.message}</h2>}
 
-      {JSON.stringify(data)}
+      <ul>
+        {data?.data?.map((item, index) => {
+          return (
+            <li key={index}>
+              {item?.name} -{item?.alterEgo}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
