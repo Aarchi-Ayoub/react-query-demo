@@ -10,6 +10,7 @@ export const RQSuperHeroesPage = () => {
     getData,
     {
       refetchOnMount: false,
+      refetchOnWindowFocus: true,
     }
   );
   return (
