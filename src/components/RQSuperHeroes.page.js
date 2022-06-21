@@ -9,10 +9,9 @@ export const RQSuperHeroesPage = () => {
     "get-heros",
     getData,
     {
-      staleTime: 30000,
+      refetchOnMount: false,
     }
   );
-  console.log({ isFetching, isLoading });
   return (
     <div>
       <h2>React Query Super Heroes Page</h2>
