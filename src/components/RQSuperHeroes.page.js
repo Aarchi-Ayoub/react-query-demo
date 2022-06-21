@@ -7,9 +7,12 @@ export const RQSuperHeroesPage = () => {
   };
   const { isLoading, isFetching, data, isError, error } = useQuery(
     "get-heros",
-    getData
+    getData,
+    {
+      staleTime: 30000,
+    }
   );
-
+  console.log({ isFetching, isLoading });
   return (
     <div>
       <h2>React Query Super Heroes Page</h2>
