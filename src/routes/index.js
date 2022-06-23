@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import '../styles/App.css'
-import { HomePage } from '../components/Home.page'
-import { RQSuperHeroesPage } from '../components/RQSuperHeroes.page'
-import { SuperHeroesPage } from '../components/SuperHeroes.page'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "../styles/App.css";
+import { HomePage } from "../components/Home.page";
+import { RQSuperHeroesPage } from "../components/RQSuperHeroes.page";
+import { SuperHeroesPage } from "../components/SuperHeroes.page";
+import { SuperHero } from "../components/SuperHero.page";
 
 function Routes() {
   return (
@@ -11,30 +12,33 @@ function Routes() {
         <nav>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to='/super-heroes'>Traditional Super Heroes</Link>
+              <Link to="/super-heroes">Traditional Super Heroes</Link>
             </li>
             <li>
-              <Link to='/rq-super-heroes'>RQ Super Heroes</Link>
+              <Link to="/rq-super-heroes">RQ Super Heroes</Link>
             </li>
           </ul>
         </nav>
         <Switch>
-          <Route path='/super-heroes'>
+          <Route path="/super-heroes">
             <SuperHeroesPage />
           </Route>
-          <Route path='/rq-super-heroes'>
+          <Route path="/rq-super-heroes">
             <RQSuperHeroesPage />
           </Route>
-          <Route path='/'>
+          <Route path="/SuperHero/:heroId">
+            <SuperHero />
+          </Route>
+          <Route path="/">
             <HomePage />
           </Route>
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
-export default Routes
+export default Routes;

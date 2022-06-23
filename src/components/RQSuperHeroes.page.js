@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useFetchSuperHeros } from "../hooks/useFetchSuperHeros";
 
 export const RQSuperHeroesPage = () => {
@@ -29,7 +30,11 @@ export const RQSuperHeroesPage = () => {
       <button onClick={refetch}>Actualiser</button>
       <ul>
         {data?.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return (
+            <li key={index}>
+              <Link to={`/SuperHero/${index}`}>{item}</Link>
+            </li>
+          );
         })}
       </ul>
     </div>
