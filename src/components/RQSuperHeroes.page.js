@@ -5,12 +5,11 @@ export const RQSuperHeroesPage = () => {
   const getData = () => {
     return axios.get("http://localhost:4000/superheroes");
   };
-  const { isLoading, isFetching, data, isError, error } = useQuery(
+  const { isLoading, isFetching, data, isError, error, refetch } = useQuery(
     "get-heros",
     getData,
     {
-      refetchInterval: 2000,
-      refetchIntervalInBackground: true,
+      enabled: false,
     }
   );
   return (
@@ -22,6 +21,7 @@ export const RQSuperHeroesPage = () => {
 
       {isError && <h2>Error was found : {error?.message}</h2>}
 
+      <button onClick={refetch}>Actualiser</button>
       <ul>
         {data?.data?.map((item, index) => {
           return (
