@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useQuery } from "react-query";
+import { useFetchSuperHeros } from "../hooks/useFetchSuperHeros";
 
 export const RQSuperHeroesPage = () => {
   // Geting data
@@ -8,24 +8,14 @@ export const RQSuperHeroesPage = () => {
   };
 
   // Success Callback
-  const onSuccess = (data) => console.log("Success callback ==> ", data);
+  const onSuccess = (data) => console.log("Success callback", data);
 
   // Failure Callback
   const onError = (error) => console.log("Failure callback ==> ", error);
 
   // Query
-  const { isLoading, isFetching, data, isError, error, refetch } = useQuery(
-    "get-heros",
-    getData,
-    {
-      onSuccess,
-      onError,
-      select: (data) => {
-        let herosNames = data?.data?.map((hero) => hero?.name);
-        return herosNames;
-      },
-    }
-  );
+  const { isLoading, isFetching, data, isError, error, refetch } =
+    useFetchSuperHeros("get-heros", getData, onSuccess, onError);
 
   return (
     <div>
