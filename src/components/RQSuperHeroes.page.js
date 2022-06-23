@@ -9,8 +9,8 @@ export const RQSuperHeroesPage = () => {
     "get-heros",
     getData,
     {
-      refetchOnMount: false,
-      refetchOnWindowFocus: true,
+      refetchInterval: 2000,
+      refetchIntervalInBackground: true,
     }
   );
   return (
