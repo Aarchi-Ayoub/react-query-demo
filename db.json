@@ -15,5 +15,25 @@
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
     }
+  ],
+  "users": [
+    {
+      "name": "Alpha Yanke",
+      "id": "email@email.ma"
+    },
+    {
+      "name": "Mike Alpha",
+      "id": "email@email.fr"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "Alpha Yanke",
+      "fonction": "React Native dev"
+    },
+    {
+      "id": "Mike Alpha",
+      "fonction": "JEE dev"
+    }
   ]
 }
