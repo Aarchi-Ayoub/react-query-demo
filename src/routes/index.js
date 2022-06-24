@@ -4,6 +4,7 @@ import { HomePage } from "../components/Home.page";
 import { RQSuperHeroesPage } from "../components/RQSuperHeroes.page";
 import { SuperHeroesPage } from "../components/SuperHeroes.page";
 import { SuperHero } from "../components/SuperHero.page";
+import ParallelDynamic from "../components/ParallelDynamic";
 
 function Routes() {
   return (
@@ -32,6 +33,10 @@ function Routes() {
           <Route path="/SuperHero/:heroId">
             <SuperHero />
           </Route>
+          <Route path="/ParallelDynamic">
+            <ParallelDynamic herosID={[1, 3]} />
+          </Route>
+
           <Route path="/">
             <HomePage />
           </Route>
