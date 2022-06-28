@@ -5,7 +5,8 @@ import { RQSuperHeroesPage } from "../components/RQSuperHeroes.page";
 import { SuperHeroesPage } from "../components/SuperHeroes.page";
 import { SuperHero } from "../components/SuperHero.page";
 import { ParallelDynamic } from "../components/ParallelDynamic.page";
-import { DependentQueries } from "../components/DependentQueries.page";
+import { DependentQueries } from "../components/DependentQueries.page copy";
+import { Paginaion } from "../components/Pagination.page";
 function Routes() {
   return (
     <Router>
@@ -39,7 +40,9 @@ function Routes() {
           <Route path="/DependentQueries">
             <DependentQueries email="email@email.ma" />
           </Route>
-
+          <Route path="/cities">
+            <Paginaion />
+          </Route>
           <Route path="/">
             <HomePage />
           </Route>

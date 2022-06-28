@@ -35,5 +35,39 @@
       "id": "Mike Alpha",
       "fonction": "JEE dev"
     }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "Tanger"
+    },
+    {
+      "id": 2,
+      "name": "LAARACHE"
+    },
+    {
+      "id": 3,
+      "name": "Nador"
+    },
+    {
+      "id": 4,
+      "name": "Ouajda"
+    },
+    {
+      "id": 5,
+      "name": "Rabat"
+    },
+    {
+      "id": 6,
+      "name": "Meknès"
+    },
+    {
+      "id": 7,
+      "name": "Fés"
+    },
+    {
+      "id": 8,
+      "name": "Agadir"
+    }
   ]
 }
