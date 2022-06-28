@@ -4,6 +4,10 @@ import { useGetSuperHero } from "../hooks/useGetSuperHero";
 
 export const SuperHero = () => {
   const { heroId } = useParams();
-  useGetSuperHero(heroId);
-  return <div>SuperHero.page</div>;
+  const { data } = useGetSuperHero(heroId);
+  return (
+    <div>
+      {data?.data?.alterEgo} == {data?.data?.name}
+    </div>
+  );
 };
