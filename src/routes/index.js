@@ -7,6 +7,7 @@ import { SuperHero } from "../components/SuperHero.page";
 import { ParallelDynamic } from "../components/ParallelDynamic.page";
 import { DependentQueries } from "../components/DependentQueries.page copy";
 import { Paginaion } from "../components/Pagination.page";
+import { Infinite } from "../components/Infinite.page";
 function Routes() {
   return (
     <Router>
@@ -42,6 +43,9 @@ function Routes() {
           </Route>
           <Route path="/cities">
             <Paginaion />
+          </Route>
+          <Route path="/cities-infinite">
+            <Infinite />
           </Route>
           <Route path="/">
             <HomePage />
