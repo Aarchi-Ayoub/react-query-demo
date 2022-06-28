@@ -32,7 +32,7 @@ export const RQSuperHeroesPage = () => {
         {data?.map((item, index) => {
           return (
             <li key={index}>
-              <Link to={`/SuperHero/${index}`}>{item}</Link>
+              <Link to={`/SuperHero/${index + 1}`}>{item}</Link>
             </li>
           );
         })}
