@@ -20,6 +20,17 @@ const postData = (hero) => {
 export const useAddSuperHeros = () => {
   const queryClient = useQueryClient();
   return useMutation(postData, {
-    onSuccess: () => queryClient.invalidateQueries("get-heros"),
+    onSuccess: (data) => {
+      /** Get request */
+      // queryClient.invalidateQueries("get-heros");
+
+      /** Handel response */
+      queryClient.setQueryData("get-heros", (oldQueryData) => {
+        return {
+          ...oldQueryData,
+          data: [...oldQueryData?.data, data?.data],
+        };
+      });
+    },
   });
 };
