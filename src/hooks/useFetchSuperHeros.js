@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useQuery, useMutation } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 
 export const useFetchSuperHeros = (pseudo, getData, onSuccess, onError) => {
   return useQuery(pseudo, getData, {
@@ -18,5 +18,8 @@ const postData = (hero) => {
 };
 
 export const useAddSuperHeros = () => {
-  return useMutation(postData);
+  const queryClient = useQueryClient();
+  return useMutation(postData, {
+    onSuccess: () => queryClient.invalidateQueries("get-heros"),
+  });
 };
