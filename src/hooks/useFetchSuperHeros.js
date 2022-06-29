@@ -21,8 +21,10 @@ export const useAddSuperHeros = () => {
   const queryClient = useQueryClient();
   return useMutation(postData, {
     onSuccess: (data) => {
-      /** Get request */
-      // queryClient.invalidateQueries("get-heros");
+      /**
+       * Get request
+       * queryClient.invalidateQueries("get-heros");
+       */
 
       /** Handel response */
       queryClient.setQueryData("get-heros", (oldQueryData) => {
